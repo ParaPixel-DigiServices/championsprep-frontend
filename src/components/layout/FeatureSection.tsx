@@ -53,10 +53,10 @@ export default function FeaturesSection() {
       
       <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-extrabold text-navy font-sans tracking-tight mb-6 leading-tight">
-          Features built for the <span className="text-accent">CBSE Commerce</span> journey
+          Advanced <span className="text-accent">Commerce Learning Dashboard</span>
         </h2>
         <p className="text-lg text-navy/60 font-serif max-w-2xl mx-auto">
-          Rich storytelling, detailed study material, and analytics that speak the language of board exam readiness—not just streaks.
+          Monitor your <strong>Class 12 board exam preparation</strong> with real-time analytics for <strong>Accountancy, Economics, and BST</strong>.
         </p>
       </div>
 
@@ -67,26 +67,23 @@ export default function FeaturesSection() {
         
         <div className="dashboard-nav flex items-center justify-between px-6 py-5 border-b border-white/10 bg-[#060027]">
           <div className="flex items-center gap-3">
-            
-            {/* --- 2. Top Bar Image Updated Here --- */}
             <img 
               src={studentProfileImg} 
-              alt="Profile" 
+              alt="ChampionsPrep Commerce Student Dashboard" 
               className="w-8 h-8 rounded-md object-cover shadow-sm border border-white/10"
+              loading="lazy"
             />
-
             <div className="flex items-center gap-2 text-white font-medium text-sm">
-              <span>Class 11</span>
+              <span>CBSE Class 12</span>
               <ChevronDown className="w-4 h-4 opacity-50" />
             </div>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/40">
             <span className="text-white">Overview</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Learn</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Challenges</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Syllabus</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Board Papers</span>
             <span className="hover:text-white cursor-pointer transition-colors">Study Groups</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Achievements</span>
           </div>
 
           <div className="flex items-center gap-4 text-white/60">
@@ -102,28 +99,26 @@ export default function FeaturesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 md:p-10 bg-[#060027] text-white">
           <div className="col-profile lg:col-span-7 flex flex-col gap-10">
             <div className="flex items-center gap-5">
-              
               <img 
                 src={studentProfileImg} 
-                alt="Ashmit Kumar" 
+                alt="Commerce Student Profile" 
                 className="w-16 h-16 rounded-full object-cover border-2 border-white/10 flex-shrink-0"
               />
-
               <div>
                 <h3 className="text-xl font-bold">Ashmit Kumar</h3>
-                <p className="text-white/50 text-sm">Bangalore, India</p>
+                <p className="text-white/50 text-sm">Class 12 Commerce</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-y-8 gap-x-4 md:gap-x-12">
-              <StatItem icon={<Link className="w-4 h-4 text-white/80" />} label="Coin Balance" value="100" />
-              <StatItem icon={<Flame className="w-4 h-4 text-white/80" />} label="Current Streak" value="7 days" />
-              <StatItem icon={<Timer className="w-4 h-4 text-white/80" />} label="Topics Studied" value="24" />
-              <StatItem icon={<TrendingUp className="w-4 h-4 text-white/80" />} label="Avg Score" value="78%" />
+              <StatItem icon={<Link className="w-4 h-4 text-white/80" />} label="Prep Coins" value="100" />
+              <StatItem icon={<Flame className="w-4 h-4 text-white/80" />} label="Daily Streak" value="7 days" />
+              <StatItem icon={<Timer className="w-4 h-4 text-white/80" />} label="Accountancy Time" value="24h" />
+              <StatItem icon={<TrendingUp className="w-4 h-4 text-white/80" />} label="Avg Mock Score" value="78%" />
             </div>
           </div>
 
           <div className="col-activity lg:col-span-5 flex flex-col justify-end">
-            <h4 className="text-lg font-medium mb-6">Activity</h4>
+            <h4 className="text-lg font-medium mb-6">Study Activity</h4>
             <div className="flex items-end justify-between h-32 gap-4 px-2">
                <ActivityLine day="Mon" height="40%" />
                <ActivityLine day="Tue" height="25%" />
@@ -137,25 +132,24 @@ export default function FeaturesSection() {
         </div>
 
         <div className="bg-[#FFFDF5] p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 text-navy border-t border-white/5">
-          
           <div className="bottom-card lg:col-span-8">
              <div className="flex justify-between items-center mb-6">
-                <h4 className="text-xl font-bold">Quick Access</h4>
+                <h4 className="text-xl font-bold">Quick Revision</h4>
                 <button className="text-xs font-bold border border-navy/10 px-3 py-1.5 rounded-full hover:bg-navy/5 flex items-center gap-1">
-                  View More →
+                  All Subjects →
                 </button>
              </div>
 
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CourseCard 
                   title="Accountancy" 
-                  date="9 Jan, 22" 
+                  date="Last studied: Today" 
                   progress="w-3/4" 
                   icon={<Calculator className="w-5 h-5 text-[#6d28d9]" />} 
                 />
                 <CourseCard 
-                  title="Business Studies" 
-                  date="12 Jan, 22" 
+                  title="Economics" 
+                  date="Last studied: Yesterday" 
                   progress="w-1/2" 
                   icon={<PieChart className="w-5 h-5 text-[#6d28d9]" />} 
                 />
@@ -165,17 +159,12 @@ export default function FeaturesSection() {
           <div className="bottom-card lg:col-span-4">
             <h4 className="text-xl font-bold mb-6">Subject Mastery</h4>
             <div className="bg-[#F8F7F0] rounded-xl p-6 h-56 flex items-end relative border border-navy/5">
-                <div className="flex flex-col-reverse justify-between h-[80%] text-[10px] text-navy/40 font-medium pr-4 border-r border-navy/5 absolute left-4 bottom-6">
-                    <span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span>
-                </div>
-
-                <div className="flex-1 flex items-end justify-center gap-6 pl-10 h-[80%]">
-                    <div className="mastery-bar w-12 md:w-16 bg-[red] rounded-t-lg h-[80%] relative shadow-sm"></div>
-                    <div className="mastery-bar w-12 md:w-16 bg-[red] rounded-t-lg h-[60%] relative shadow-sm"></div>
+                <div className="flex-1 flex items-end justify-center gap-6 pl-2 h-[80%]">
+                    <div className="mastery-bar w-12 md:w-16 bg-[#6d28d9] rounded-t-lg h-[80%] relative shadow-sm"></div>
+                    <div className="mastery-bar w-12 md:w-16 bg-[#6d28d9]/60 rounded-t-lg h-[60%] relative shadow-sm"></div>
                 </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -209,6 +198,7 @@ function ActivityLine({ day, height, active = false }: { day: string, height: st
     </div>
   );
 }
+
 function CourseCard({ title, date, progress, icon }: { title: string, date: string, progress: string, icon: any }) {
   return (
     <div className="bg-white p-5 rounded-2xl border border-navy/5 hover:border-navy/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col justify-between">

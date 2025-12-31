@@ -5,26 +5,27 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- SEO UPDATE: Question-based keywords for Featured Snippets ---
 const faqs = [
   {
-    question: "How does the free trial work?",
-    answer: "You get 50 free coins immediately upon signing up. This allows you to unlock specific topic quizzes or flashcards to test the platform. The trial lasts for 7 days or until your coins run out."
+    question: "Is ChampionsPrep suitable for CBSE Class 12 Commerce board exams?",
+    answer: "Absolutely. Our platform is specifically designed for the CBSE Commerce syllabus. We provide comprehensive practice for Accountancy, Economics, and Business Studies, ensuring students are fully prepared for their Class 12 board exams with the latest pattern questions."
   },
   {
-    question: "What costs coins in ChampionsPrep?",
-    answer: "Coins are used to unlock premium practice sets, detailed video solutions, and AI-generated mock exams. Basic summaries and progress tracking are free."
+    question: "Do you provide video solutions for Accountancy problems?",
+    answer: "Yes! Premium members can unlock detailed video solutions for complex Accountancy problems and Economics numericals. Our expert mentors break down each step so you understand the logic, not just the answer."
   },
   {
-    question: "Can I purchase coins anytime?",
-    answer: "Yes! You can top up your coin balance instantly from the dashboard. We offer various bundles ranging from small top-ups to full-term packages."
+    question: "How can parents track Class 11 & 12 Commerce progress?",
+    answer: "Parents can create a dedicated 'Observer Account' linked to their child. You will receive weekly activity reports, streak updates, and performance analytics for every subject, allowing you to monitor board exam readiness without any hassle."
   },
   {
-    question: "Is ChampionsPrep subscription-based?",
-    answer: "We offer both pay-as-you-go (coin based) and subscription models. The subscription gives you unlimited access without needing to count coins."
+    question: "How do I use coins to unlock Commerce study material?",
+    answer: "ChampionsPrep uses a flexible coin system. Upon signing up, you get free coins to explore topic-wise quizzes and flashcards. You can use coins to unlock specific premium practice sets or mock tests as needed, making it a cost-effective way to study."
   },
   {
-    question: "Do parents need a separate login?",
-    answer: "Yes, parents can create a linked observer account. This allows them to view activity reports and streaks without interfering with the student's actual study data."
+    question: "Is there a full subscription for the entire Commerce syllabus?",
+    answer: "Yes, we offer both a pay-as-you-go coin model and a full-term subscription. The subscription provides unlimited access to all subjects—Accountancy, Economics, and Business Studies—including all AI mock exams and video solutions for the entire academic year."
   }
 ];
 
@@ -77,34 +78,37 @@ export default function FAQSection() {
           </h2>
         </div>
 
-        <div className="space-y-4">
+        {/* --- Semantic <dl> tag for better SEO structure --- */}
+        <dl className="space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index} 
               className="faq-item bg-[#1A1033] rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg"
             >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none group"
-              >
-                <span className="text-white font-medium text-lg md:text-xl pr-6 group-hover:text-white/90 transition-colors">
-                  {faq.question}
-                </span>
-                <ChevronDown 
-                  className={`w-6 h-6 text-white/70 transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} 
-                />
-              </button>
+              <dt>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none group"
+                >
+                  <span className="text-white font-medium text-lg md:text-xl pr-6 group-hover:text-white/90 transition-colors">
+                    {faq.question}
+                  </span>
+                  <ChevronDown 
+                    className={`w-6 h-6 text-white/70 transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} 
+                  />
+                </button>
+              </dt>
               
-              <div 
+              <dd 
                 className={`transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}
               >
                 <p className="p-5 md:p-6 pt-0 text-white/70 leading-relaxed text-sm md:text-base border-t border-white/5 mt-2">
                   {faq.answer}
                 </p>
-              </div>
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
 
       </div>
     </section>

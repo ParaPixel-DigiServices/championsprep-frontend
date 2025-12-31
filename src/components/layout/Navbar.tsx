@@ -3,12 +3,13 @@ import { Button } from "../ui/Button";
 import { Menu, X } from 'lucide-react';
 import logo from '/logo.png'; 
 
+// --- SEO UPDATE: Descriptive labels for internal linking ---
 const navLinks = [
-  { name: "Overview", href: "#hero" },
-  { name: "Features", href: "#features" },
-  { name: "Curriculum", href: "#curriculum" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Smarter Learning", href: "#hero" },
+  { name: "Study Features", href: "#features" },
+  { name: "Commerce Syllabus", href: "#curriculum" },
+  { name: "Prep Pricing", href: "#pricing" },
+  { name: "Commerce FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -61,10 +62,10 @@ export default function Navbar() {
             onClick={(e) => handleScrollTo(e, '#hero')}
             className="flex items-center gap-1 md:gap-2 cursor-pointer group"
           >
-            {/* --- UPDATED: Used translate-y-3 to push logo down without expanding navbar height too much --- */}
+            {/* --- SEO UPDATE: Descriptive ALT text for brand indexing --- */}
             <img 
               src={logo} 
-              alt="ChampionsPrep Logo" 
+              alt="ChampionsPrep: Best Online Commerce Board Prep" 
               className="h-20 md:h-28 w-auto object-contain transition-transform group-hover:scale-105 translate-y-3" 
             />
             
@@ -102,6 +103,7 @@ export default function Navbar() {
 
         </div>
       </nav>
+      {/* Mobile Menu */}
       <div 
         className={`fixed inset-0 bg-[#FFFDF5] z-[90] md:hidden flex flex-col items-center justify-center gap-8 transition-all duration-300 ease-in-out ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'

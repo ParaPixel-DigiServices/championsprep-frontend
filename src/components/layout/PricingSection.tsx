@@ -5,38 +5,39 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- SEO UPDATE: Descriptive plan names and value propositions ---
 const plans = [
   {
     id: 1,
     coins: 50,
     price: "0",
-    period: "Valid for 7 days",
-    buttonText: "Start Free",
+    period: "7-Day Trial Period",
+    buttonText: "Start Free Board Prep",
     highlight: false
   },
   {
     id: 2,
     coins: 100,
     price: "99",
-    period: "As you go",
-    buttonText: "Buy Now",
+    period: "Flexible Pay-As-You-Go",
+    buttonText: "Get Access Now",
     highlight: false
   },
   {
     id: 3,
     coins: 220,
     price: "199",
-    period: "Best Value",
-    buttonText: "Buy Now",
+    period: "Best Value for Exams",
+    buttonText: "Unlock Full Access",
     highlight: true,
-    badgeText: "Best Value"
+    badgeText: "Most Popular for Class 12"
   },
   {
     id: 4,
     coins: 350,
     price: "299",
-    period: "Maximum Savings",
-    buttonText: "Buy Now",
+    period: "Full-Term Board Prep",
+    buttonText: "Maximize My Score",
     highlight: false
   }
 ];
@@ -76,17 +77,19 @@ export default function PricingSection() {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="pricing-header text-center mb-16 md:mb-20">
+          {/* --- SEO HEADER: Targeting "Commerce Coaching Fees" --- */}
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#060027] font-sans tracking-tight mb-6">
-            Flexible plans for <span className="text-[#6d28d9]">every stage</span> <br className="hidden md:block" />
-            of exam prep
+            Affordable <span className="text-[#6d28d9]">Commerce Coaching</span> Plans <br className="hidden md:block" />
+            for Every Board Student
           </h2>
           <p className="text-[#060027]/60 text-lg font-serif max-w-2xl mx-auto leading-relaxed">
-            Start free, then scale into mentor support and unlimited practice when you are ready.
+            Choose the right investment for your <strong>Accountancy, Economics, and BST</strong> preparation. Start with a free trial and scale as your board exams approach.
           </p>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
           {plans.map((plan) => (
-            <div 
+            <article 
               key={plan.id} 
               className={`pricing-card relative flex flex-col items-center p-6 rounded-2xl transition-all duration-300 group
                 ${plan.highlight 
@@ -104,11 +107,12 @@ export default function PricingSection() {
 
               <div className="mb-6 bg-white border border-[#6d28d9]/20 rounded-full px-5 py-2 flex items-center gap-2 text-[#060027]">
                 <Coins className="w-4 h-4 text-[#6d28d9]" />
-                <span className="font-semibold">{plan.coins} Coins</span>
+                <span className="font-semibold">{plan.coins} Study Coins</span>
               </div>
 
               <div className="text-center mb-2">
-                <span className="text-3xl font-extrabold text-[#060027]">Rs {plan.price}</span>
+                <span className="text-sm font-bold text-[#060027]/40 block mb-1">Tuition Fees</span>
+                <span className="text-3xl font-extrabold text-[#060027]">₹{plan.price}</span>
               </div>
 
               <p className="text-sm font-medium text-[#060027]/60 mb-8 text-center">
@@ -124,7 +128,7 @@ export default function PricingSection() {
                 {plan.buttonText}
               </button>
 
-            </div>
+            </article>
           ))}
         </div>
 

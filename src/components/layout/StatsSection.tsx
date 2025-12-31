@@ -4,11 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- SEO UPDATE: Keywords for credibility and scale ---
 const statsData = [
-  { value: 18500, suffix: "+", label: "Commerce Learners Supported", decimals: 0 },
+  { value: 18500, suffix: "+", label: "Commerce Learners Mentored", decimals: 0 },
   { value: 92, suffix: "%", label: "Average Improvement in Concept Mastery", decimals: 0 },
-  { value: 120, suffix: "+", label: "Interactive syllabus topics covered", decimals: 0 },
-  { value: 4.8, suffix: "/5", label: "Parents satisfaction ratings", decimals: 1 },
+  { value: 120, suffix: "+", label: "CBSE Syllabus Topics Mastered", decimals: 0 },
+  { value: 4.8, suffix: "/5", label: "Top-Rated Parent Satisfaction", decimals: 1 },
 ];
 
 export default function StatsSection() {
@@ -61,7 +62,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 px-6 md:px-12 relative z-50">
+    <section ref={sectionRef} className="py-16 px-6 md:px-12 relative z-50 bg-[#FBF8FF]">
       <div className="max-w-7xl mx-auto relative">
         <div 
           ref={cardRef} 

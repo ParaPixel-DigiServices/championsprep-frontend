@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Exclude sensitive or internal folders
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Link to sitemap
+Sitemap: https://championsprep.netlify.app/sitemap.xml

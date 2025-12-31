@@ -1,14 +1,16 @@
-import Home from "./pages/Home";
-import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import NotFound from './pages/404'; // 1. Import your new file
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
-
-function App() {
+export default function App() {
   useSmoothScroll();
   return (
-    <div className="antialiased">
-      <Home />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App;

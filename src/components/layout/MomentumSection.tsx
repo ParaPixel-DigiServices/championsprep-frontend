@@ -9,8 +9,8 @@ const steps = [
   {
     id: 1,
     number: "1",
-    title: "Start with a readiness diagnostics in just 10 minutes",
-    description: "Students complete a low-pressure baseline to map strengths and gaps across the CBSE Class 11 or 12 commerce syllabus.",
+    title: "10-Minute Commerce Readiness Diagnostics",
+    description: "Students complete a low-pressure baseline to map strengths and gaps across the CBSE Class 11 or 12 commerce syllabus, specifically for Accountancy and Economics.",
     card: {
       icon: <Clock className="w-6 h-6 text-[#3b1578]" />,
       label: "Time Saved",
@@ -21,8 +21,8 @@ const steps = [
   {
     id: 2,
     number: "2",
-    title: "Follow curated weekly playlists: Personalized for each learner",
-    description: "ChampionsPrep crafts lesson and practice playlists that balance new instruction with revision so nothing slips through before exams.",
+    title: "Personalized Weekly Study Playlists",
+    description: "ChampionsPrep crafts curated lesson and practice playlists that balance new CBSE topics with revision to ensure peak performance in board exams.",
     card: {
       icon: <TrendingUp className="w-6 h-6 text-[#3b1578]" />,
       label: "Score Impact",
@@ -33,8 +33,8 @@ const steps = [
   {
     id: 3,
     number: "3",
-    title: "Track progress with clarity: Shared with families automatically",
-    description: "Parents receive concise summaries, improvement charts, and next-step recommendations without needing to chase updates.",
+    title: "Automated Board Prep Progress Tracking",
+    description: "Families receive automated improvement charts and next-step recommendations, keeping parents informed on board exam readiness without the chase.",
     card: {
       icon: <Target className="w-6 h-6 text-[#3b1578]" />,
       label: "Accuracy",
@@ -78,11 +78,10 @@ export default function MomentumSection() {
       );
 
       steps.forEach((step) => {
-        // --- UPDATED: Background is now #FBF8FF ---
         gsap.fromTo(`.step-circle-${step.id}`,
           { backgroundColor: "#FBF8FF", color: "#ddd", borderColor: "#ddd" },
           { 
-            backgroundColor: "#FBF8FF", // Updated to #FBF8FF
+            backgroundColor: "#FBF8FF",
             color: "#3b1578",           
             borderColor: "#3b1578",     
             duration: 0.5,
@@ -135,14 +134,14 @@ export default function MomentumSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#060027] font-sans tracking-tight mb-6">
-            How ChampionsPrep keeps <span className="text-[#6d28d9]">momentum</span> through the year
+            Maintain <span className="text-[#6d28d9]">Study Momentum</span> for Board Exams
           </h2>
           <p className="text-[#060027]/60 text-lg font-serif max-w-3xl mx-auto leading-relaxed">
-            Each step blends guided learning with accountability so parents and mentors stay informed without chasing updates.
+            ChampionsPrep blends <strong>personalized learning</strong> with high accountability so parents and mentors stay informed on every <strong>CBSE Commerce</strong> milestone.
           </p>
         </div>
+        
         <div className="relative">
-          
           <div className="absolute left-[20px] md:left-[28px] top-0 bottom-0 w-px z-0">
              <div className="w-px h-full border-l-2 border-dashed border-gray-200"></div>
           </div>
@@ -155,7 +154,7 @@ export default function MomentumSection() {
               <div key={step.id} className={`step-row-${step.id} relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start md:items-center`}>
                 
                 <div className="col-span-12 md:col-span-1 flex items-start md:justify-center relative z-10">
-                  <div className={`step-circle-${step.id} w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-gray-200 bg-[#6d28d9] text-gray-300 flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_0_8px_#FBF8FF] transition-colors`}>
+                  <div className={`step-circle-${step.id} w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-gray-200 bg-[#FBF8FF] text-gray-300 flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_0_8px_#FBF8FF] transition-colors`}>
                     {step.number}
                   </div>
                 </div>
@@ -187,9 +186,7 @@ export default function MomentumSection() {
               </div>
             ))}
           </div>
-
         </div>
-
       </div>
     </section>
   );

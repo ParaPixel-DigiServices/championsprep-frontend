@@ -5,24 +5,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- SEO UPDATE: High-intent keywords for CBSE evaluation ---
 const features = [
   {
     id: 1,
-    title: "MCQ Quiz",
-    description: "Every unit begins with a diagnostic pulse. Students see a tailored lesson path focusing on exact CBSE competencies.",
+    title: "CBSE MCQ Practice",
+    description: "Master the latest board pattern with diagnostic MCQs. Every unit includes targeted practice for Case-Based and Assertion-Reasoning questions.",
     items: ["Video explainers", "AI-Built flashcards", "Real-time difficulty adaption"]
   },
   {
     id: 2,
-    title: "Daily Practice",
-    description: "Short, sharp problem sets designed to keep retention high without overwhelming the student's daily schedule.",
+    title: "Daily Commerce Prep",
+    description: "Short, sharp problem sets for Accountancy and Economics designed to keep retention high without overwhelming the daily schedule.",
     items: ["Streak tracking", "Mistake analysis", "Peer comparison"]
   },
   {
     id: 3,
-    title: "Mock Exams",
-    description: "Full-length simulations that mirror the actual board pattern, ensuring time management is mastered before the big day.",
-    items: ["Pattern-exact papers", "Detailed marking scheme", "Predicted score range"]
+    title: "Board-Pattern Mocks",
+    description: "Full-length mock exams that mirror the actual CBSE Class 12 Commerce pattern to master time management before the big day.",
+    items: ["Pattern-exact papers", "Detailed marking scheme", "Predicted board scores"]
   }
 ];
 
@@ -107,11 +108,12 @@ export default function QuizFeatures() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         <div className="quiz-anim-item title-anim text-center mb-8 md:mb-16"> 
+          {/* --- Semantic H2 with primary keyword --- */}
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#060027] font-sans tracking-tight">
-             Diagnostic-First Learning
+              Diagnostic-First <span className="text-[#6d28d9]">Commerce Coaching</span>
           </h2>
           <p className="text-[#060027]/60 mt-4 text-lg font-serif max-w-2xl mx-auto">
-            Identify gaps before they become exam fears with our smart assessment engine.
+            Identify gaps in <strong>Class 11 & 12 Commerce</strong> before they become exam fears with our smart assessment engine.
           </p>
         </div>
 

@@ -1,28 +1,33 @@
 import React, { useEffect, useRef } from 'react';
-import { BookOpen, Briefcase, Swords } from 'lucide-react'; // 'Swords' for Friend Challenges
+import { BookOpen, Briefcase, TrendingUp } from 'lucide-react'; // Changed icon for Economics
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// --- SEO UPDATE: Replaced "Friend Challenges" with "Economics" ---
+// Google ranks pages higher that cover the full syllabus (Accounts + BST + Eco).
 const subjects = [
   {
     id: 1,
     title: "Accountancy",
     icon: <BookOpen className="w-6 h-6 text-[#060027]" />,
-    tags: ["Partnership", "Company Accounts", "Financial Statements", "Cash Flow"]
+    // Keywords: Partnership, Shares, Cash Flow are high volume
+    tags: ["Partnership Fundamentals", "Company Accounts (Shares)", "Cash Flow Statements", "Analysis of Financial Statements"]
   },
   {
     id: 2,
     title: "Business Studies",
     icon: <Briefcase className="w-6 h-6 text-[#060027]" />,
-    tags: ["Principles of Management", "Marketing Management", "Planning", "Organising"]
+    // Keywords: Case Studies is a huge pain point for students
+    tags: ["Principles of Management", "Marketing Management", "BST Case Studies", "Financial Markets"]
   },
   {
     id: 3,
-    title: "Friend Challenges",
-    icon: <Swords className="w-6 h-6 text-[#060027]" />,
-    tags: ["1v1 Battles", "Weekly Leaderboard", "Topic Wars", "Streak Saver"]
+    title: "Economics",
+    icon: <TrendingUp className="w-6 h-6 text-[#060027]" />,
+    // Keywords: Macro/Micro distinctions are frequently searched
+    tags: ["Introductory Macroeconomics", "Indian Economic Development", "Statistics for Economics", "Microeconomics Graphs"]
   }
 ];
 
@@ -68,19 +73,19 @@ export default function CoverageSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="coverage-header text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#060027] font-sans tracking-tight mb-6">
-            Complete coverage for <br className="hidden md:block" />
-            <span className="text-[#6d28d9]">Class 11 and 12 Commerce</span>
+            Complete syllabus coverage for <br className="hidden md:block" />
+            <span className="text-[#6d28d9]">Class 11 & 12 Commerce</span>
           </h2>
           <p className="text-[#060027]/60 text-lg font-serif max-w-3xl mx-auto leading-relaxed">
-            Every concept map, lesson, and practice deck is reviewed by board examiners and updated each term.
+            From <strong>Balance Sheets</strong> to <strong>Macroeconomics curves</strong>, every concept is reviewed by CBSE board examiners.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {subjects.map((subject) => (
-            <div 
+            <article 
               key={subject.id} 
-              className="coverage-card group bg-[#F0F0FF] rounded-2xl p-6 md:p-8 border border-[#060027]/5 hover:border-[#6d28d9]/20 hover:shadow-[0_10px_30px_-10px_rgba(109,40,217,0.2)] hover:-translate-y-2 transition-all duration-300"
+              className="coverage-card group bg-[#F0F0FF] rounded-2xl p-6 md:p-8 border border-[#060027]/5 hover:border-[#6d28d9]/20 hover:shadow-[0_10px_30px_-10px_rgba(109,40,217,0.2)] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
             >
 
               <div className="flex items-center gap-4 mb-8">
@@ -92,7 +97,7 @@ export default function CoverageSection() {
                 </h3>
               </div>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mt-auto">
                 {subject.tags.map((tag, i) => (
                   <span 
                     key={i} 
@@ -103,7 +108,7 @@ export default function CoverageSection() {
                 ))}
               </div>
 
-            </div>
+            </article>
           ))}
         </div>
 

@@ -11,6 +11,7 @@ import CoverageSection from "../components/layout/CoverageSection";
 import TestimonialsSection from "../components/layout/TestimonialSection";
 import PricingSection from "../components/layout/PricingSection";
 import FAQSection from "../components/layout/FAQSection";
+import SEO from "../components/seo/SEO"; // Ensure you have this component from the previous step
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -76,7 +77,6 @@ export default function Home() {
 
       // --- SMOOTH FLOATING ANIMATION LOGIC ---
       const startFloating = () => {
-        // Shape Left
         if (shapeLeft.current) {
           gsap.to(shapeLeft.current, {
             y: "-=15",
@@ -89,7 +89,6 @@ export default function Home() {
           });
         }
         
-        // Shape Right
         if (shapeRight.current) {
           gsap.to(shapeRight.current, {
             y: "+=20",
@@ -102,7 +101,6 @@ export default function Home() {
           });
         }
         
-        // Circle 2
         if (circle2.current) {
           gsap.to(circle2.current, {
             y: "+=8",
@@ -126,6 +124,14 @@ export default function Home() {
       ref={containerRef}
       className="min-h-screen bg-[#FBF8FF] overflow-x-hidden relative"
     >
+      {/* --- SEO INJECTION START --- */}
+      <SEO 
+        title="Best CBSE Class 12 Commerce Coaching & Board Prep | ChampionsPrep"
+        description="Join India's best online commerce coaching for Class 11 & 12. Master Accountancy, Economics, and Business Studies with AI-driven plans and expert tuition."
+        keywords="CBSE Class 12 Commerce coaching, online commerce tuition, class 11 commerce classes, accountancy board prep, economics tuition online, business studies coaching, commerce board exam preparation"
+      />
+      {/* --- SEO INJECTION END --- */}
+
       <Navbar />
 
       {isDesktop && (
@@ -139,24 +145,26 @@ export default function Home() {
         className="pt-24 pb-12 px-5 md:pt-32 md:pb-0 md:px-12 max-w-7xl mx-auto min-h-auto md:min-h-[90vh] flex flex-col md:flex-row items-center relative"
       >
         <div className="w-full md:w-1/2 relative z-20 flex flex-col items-start gap-5 md:gap-8 md:pr-12 mb-8 md:mb-0">
+          {/* --- H1 Optimized for Primary Keyword: "Commerce Board Prep" --- */}
           <h1 className="hero-text text-4xl md:text-[4rem] leading-[1.1] font-extrabold font-sans text-navy tracking-tight will-change-transform">
-            Smarter Commerce Board Prep With{" "}
-            <span className="text-accent">AI Buddy</span> Parents Can Trust
+            Smarter <span className="text-accent">Commerce Board Prep</span> With AI Buddy Parents Trust
           </h1>
 
           <div className="hero-text space-y-3 md:space-y-4 max-w-lg will-change-transform">
+            {/* --- H2 Optimized for Subject Keywords --- */}
             <h2 className="text-xl md:text-2xl font-sans font-bold text-navy">
-              Create & Evaluate with Ease
+              Master Accountancy, Economics & BST
             </h2>
+            {/* --- Paragraph Optimized for "Online Tuition" and "Class 12" --- */}
             <p className="text-base md:text-lg font-serif text-navy/80 leading-relaxed">
-              Weekly study plans, chapter-wise performance tracking, and a
-              parent dashboard — so your child improves in Accounts, Economics &
-              Business Studies without stress.
+              Get personalized weekly study plans for <strong>Class 11 & 12 Commerce</strong>. 
+              Track chapter-wise performance in <strong>Accountancy</strong> and <strong>Economics</strong> 
+              with a dashboard designed for board exam success.
             </p>
           </div>
 
           <div className="hero-text pt-2 md:pt-4 will-change-transform">
-            <Button>Start for free</Button>
+            <Button>Start Free Trial</Button>
           </div>
         </div>
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden md:pointer-events-auto md:relative md:w-1/2 md:opacity-100 md:block md:h-[600px] md:-mt-40 md:overflow-visible">
