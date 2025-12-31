@@ -51,7 +51,7 @@ export default function Navbar() {
       <nav 
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 border-b ${
           scrolled 
-            ? 'bg-[#FBF8FF]/90 backdrop-blur-md border-[#060027]/5 shadow-sm py-1' 
+            ? 'bg-[#FBF8FF]/90 backdrop-blur-md border-[#060027]/5 shadow-sm py-2' 
             : 'bg-transparent border-transparent py-3'
         }`}
       >
@@ -61,13 +61,14 @@ export default function Navbar() {
             onClick={(e) => handleScrollTo(e, '#hero')}
             className="flex items-center gap-1 md:gap-2 cursor-pointer group"
           >
+            {/* --- UPDATED: Used translate-y-3 to push logo down without expanding navbar height too much --- */}
             <img 
               src={logo} 
               alt="ChampionsPrep Logo" 
-              className="h-20 md:h-28 w-auto object-contain transition-transform group-hover:scale-105 mt-4" 
+              className="h-20 md:h-28 w-auto object-contain transition-transform group-hover:scale-105 translate-y-3" 
             />
             
-            <span className="text-[#060027] font-sans font-bold text-lg md:text-xl tracking-tight leading-none mt-1">
+            <span className="text-[#060027] font-sans font-bold text-lg md:text-xl tracking-tight leading-none">
               ChampionsPrep
             </span>
           </a>
