@@ -37,10 +37,12 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Initial states
       gsap.set(".hero-text", { y: 50, opacity: 0 });
       gsap.set([shapeLeft.current, shapeRight.current], { y: 150, opacity: 0 });
       gsap.set([circle1.current, circle2.current], { scale: 0 });
 
+      // Intro Timeline
       const tl = gsap.timeline({
         defaults: { ease: "power3.out" },
         onComplete: () => startFloating(),
@@ -72,29 +74,41 @@ export default function Home() {
           "-=0.6"
         );
 
+      // --- SMOOTH FLOATING ANIMATION LOGIC ---
       const startFloating = () => {
+        // Shape Left
         if (shapeLeft.current) {
           gsap.to(shapeLeft.current, {
             y: "-=15",
+            rotation: 0.01, // Trick: Forces sub-pixel rendering (prevents jitter)
+            force3D: true,  // Trick: Forces GPU layer promotion
             duration: 4,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut",
           });
         }
+        
+        // Shape Right
         if (shapeRight.current) {
           gsap.to(shapeRight.current, {
             y: "+=20",
+            rotation: 0.01,
+            force3D: true,
             duration: 5,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut",
           });
         }
+        
+        // Circle 2
         if (circle2.current) {
           gsap.to(circle2.current, {
             y: "+=8",
             x: "-=5",
+            rotation: 0.01,
+            force3D: true,
             duration: 3.5,
             repeat: -1,
             yoyo: true,
