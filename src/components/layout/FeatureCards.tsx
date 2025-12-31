@@ -100,7 +100,7 @@ export default function QuizFeatures() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative z-40 py-20 md:py-32 px-5 md:px-12 bg-[#FFFDF5] overflow-hidden">
+    <section ref={sectionRef} className="relative z-40 py-20 md:py-32 px-5 md:px-12 bg-[#FBF8FF] overflow-hidden">
   
       <style>{hideScrollbarStyles}</style>
 

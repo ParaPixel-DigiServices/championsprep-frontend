@@ -72,7 +72,7 @@ export default function PricingSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative z-50 py-24 md:py-32 px-5 md:px-12 bg-[#FFFDF5] overflow-hidden">
+    <section ref={containerRef} className="relative z-50 py-24 md:py-32 px-5 md:px-12 bg-[#FBF8FF] overflow-hidden">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="pricing-header text-center mb-16 md:mb-20">

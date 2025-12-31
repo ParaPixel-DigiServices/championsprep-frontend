@@ -3,8 +3,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   Search, Bell, Settings, ChevronDown, 
-  Link, Flame, Timer, TrendingUp 
+  Link, Flame, Timer, TrendingUp,
+  Calculator, PieChart 
 } from 'lucide-react';
+
+import studentProfileImg from '../../assets/images/student_profile.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +49,7 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative z-30 py-16 px-5 md:px-12 bg-[#FFFDF5] overflow-hidden perspective-1000">
+    <section ref={containerRef} className="relative z-30 py-16 px-5 md:px-12 bg-[#FBF8FF] overflow-hidden perspective-1000">
       
       <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-extrabold text-navy font-sans tracking-tight mb-6 leading-tight">
@@ -64,7 +67,14 @@ export default function FeaturesSection() {
         
         <div className="dashboard-nav flex items-center justify-between px-6 py-5 border-b border-white/10 bg-[#060027]">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#FFFDF5] rounded-md shadow-sm"></div>
+            
+            {/* --- 2. Top Bar Image Updated Here --- */}
+            <img 
+              src={studentProfileImg} 
+              alt="Profile" 
+              className="w-8 h-8 rounded-md object-cover shadow-sm border border-white/10"
+            />
+
             <div className="flex items-center gap-2 text-white font-medium text-sm">
               <span>Class 11</span>
               <ChevronDown className="w-4 h-4 opacity-50" />
@@ -92,7 +102,13 @@ export default function FeaturesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 md:p-10 bg-[#060027] text-white">
           <div className="col-profile lg:col-span-7 flex flex-col gap-10">
             <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-full bg-gray-300 flex-shrink-0"></div>
+              
+              <img 
+                src={studentProfileImg} 
+                alt="Ashmit Kumar" 
+                className="w-16 h-16 rounded-full object-cover border-2 border-white/10 flex-shrink-0"
+              />
+
               <div>
                 <h3 className="text-xl font-bold">Ashmit Kumar</h3>
                 <p className="text-white/50 text-sm">Bangalore, India</p>
@@ -131,8 +147,18 @@ export default function FeaturesSection() {
              </div>
 
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <CourseCard title="Accountancy" date="9 Jan, 22" progress="w-3/4" />
-                <CourseCard title="Accountancy" date="9 Jan, 22" progress="w-1/2" />
+                <CourseCard 
+                  title="Accountancy" 
+                  date="9 Jan, 22" 
+                  progress="w-3/4" 
+                  icon={<Calculator className="w-5 h-5 text-[#6d28d9]" />} 
+                />
+                <CourseCard 
+                  title="Business Studies" 
+                  date="12 Jan, 22" 
+                  progress="w-1/2" 
+                  icon={<PieChart className="w-5 h-5 text-[#6d28d9]" />} 
+                />
              </div>
           </div>
 
@@ -183,17 +209,18 @@ function ActivityLine({ day, height, active = false }: { day: string, height: st
     </div>
   );
 }
-
-function CourseCard({ title, date, progress }: { title: string, date: string, progress: string }) {
+function CourseCard({ title, date, progress, icon }: { title: string, date: string, progress: string, icon: any }) {
   return (
     <div className="bg-white p-5 rounded-2xl border border-navy/5 hover:border-navy/10 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col justify-between">
        <div>
-         <div className="w-10 h-10 rounded-full bg-gray-200 mb-4"></div>
+         <div className="w-10 h-10 rounded-full bg-[#FFFDF5] border border-navy/5 flex items-center justify-center mb-4">
+           {icon}
+         </div>
          <h5 className="font-bold text-navy text-sm mb-1">{title}</h5>
          <p className="text-xs text-navy/40 mb-6 font-medium">{date}</p>
        </div>
        <div className="h-1 w-full bg-navy/5 rounded-full overflow-hidden">
-          <div className={`h-full bg-accent ${progress} rounded-full`}></div>
+         <div className={`h-full bg-accent ${progress} rounded-full`}></div>
        </div>
     </div>
   );

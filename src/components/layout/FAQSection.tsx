@@ -64,7 +64,7 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative z-50 py-24 md:py-32 px-5 md:px-12 bg-[#FFFDF5]">
+    <section ref={containerRef} className="relative z-50 py-24 md:py-32 px-5 md:px-12 bg-[#FBF8FF]">
       
       <div className="max-w-3xl mx-auto">
  

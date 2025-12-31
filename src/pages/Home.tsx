@@ -110,7 +110,7 @@ export default function Home() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-cream overflow-x-hidden relative"
+      className="min-h-screen bg-[#FBF8FF] overflow-x-hidden relative"
     >
       <Navbar />
 
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
 
           <div className="hero-text pt-2 md:pt-4 will-change-transform">
-            <Button>Begin Smart Commerce Prep</Button>
+            <Button>Start for free</Button>
           </div>
         </div>
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden md:pointer-events-auto md:relative md:w-1/2 md:opacity-100 md:block md:h-[600px] md:-mt-40 md:overflow-visible">

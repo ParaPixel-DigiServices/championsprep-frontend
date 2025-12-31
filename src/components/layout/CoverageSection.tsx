@@ -63,7 +63,7 @@ export default function CoverageSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-5 md:px-12 bg-[#FFFDF5] relative overflow-hidden z-30">
+    <section ref={containerRef} className="py-24 px-5 md:px-12 bg-[#FBF8FF] relative overflow-hidden z-30">
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="coverage-header text-center mb-16 md:mb-20">

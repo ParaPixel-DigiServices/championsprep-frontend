@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "../ui/Button";
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '/logo.png'; 
 
 const navLinks = [
   { name: "Overview", href: "#hero" },
@@ -50,23 +51,27 @@ export default function Navbar() {
       <nav 
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 border-b ${
           scrolled 
-            ? 'bg-[#FFFDF5]/90 backdrop-blur-md border-[#060027]/5 shadow-sm py-4' 
-            : 'bg-transparent border-transparent py-6'
+            ? 'bg-[#FBF8FF]/90 backdrop-blur-md border-[#060027]/5 shadow-sm py-1' 
+            : 'bg-transparent border-transparent py-3'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <a 
             href="#hero" 
             onClick={(e) => handleScrollTo(e, '#hero')}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-1 md:gap-2 cursor-pointer group"
           >
-            <div className="w-10 h-10 bg-[#060027] rounded-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-md">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-[#060027] font-sans font-bold text-lg tracking-tight">
+            <img 
+              src={logo} 
+              alt="ChampionsPrep Logo" 
+              className="h-20 md:h-28 w-auto object-contain transition-transform group-hover:scale-105 mt-4" 
+            />
+            
+            <span className="text-[#060027] font-sans font-bold text-lg md:text-xl tracking-tight leading-none mt-1">
               ChampionsPrep
             </span>
           </a>
+
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a 
